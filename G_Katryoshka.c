@@ -1,23 +1,24 @@
 #include<stdio.h>
 int main(){
-    long long int a,b,c;
-    scanf("%lld %lld %lld",&a, &b, &c);
-    int s=0;
-    while(b!=0||a!=0||c!=0){
-        if(a>=1&&b>=1&&c>=1){
-            s=s+1;
-            a=a-1;
-            b=b-1;
-            c=c-1;
-        }
+    long long int eye,mouth,body,min;
+    scanf("%lld %lld %lld",&eye,&mouth,&body);
+    if(eye<mouth&&eye<body){
+        min=eye;
     }
-    while(a!=0||c!=0){
-        if(a>=2&&c>=1){
-            s=s+1;
-            a=a-2;
-            c=c-1;
-        }
+    else if(mouth<eye&&mouth<body){
+        min=mouth;
     }
-    printf("%d",s);
+    else if(body<eye&&body<mouth){
+        min=body;
+    }
+    long long int a=(eye-min)/2;
+    long long int b=mouth-min;
+    long long int c=body-min;
+    if(a<=c){
+        printf("%lld",a + min);
+    }
+    else if(c<a){
+        printf("%lld",c+min);
+    }
     return 0;
 }
