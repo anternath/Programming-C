@@ -2,14 +2,17 @@
 #include<string.h>
 int main(){
     char ch[100001];
-    scanf("%s",ch);
-    int a = strlen(ch);
-    for(int i=0; i<a; i++){
+    scanf("%s",&ch);
+    int len = strlen(ch);
+    for(int i=0; i<=len; i++){
         if(ch[i]==','){
-            ch[i]= ' ';
+            ch[i]=' ';
         }
-        if('a'<=ch[i]<='z'){
+        else if('a'<=ch[i]&&ch[i]<='z'){
             ch[i] = ch[i]-32;
+        }
+        else if('A'<= ch[i] && ch[i]<='Z'){
+            ch[i] = ch[i]+32;
         }
         
     }
