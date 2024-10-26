@@ -8,7 +8,6 @@ int main(){
             scanf("%d",&n[i][j]);
         }
     }
-    int a= n[0][0];
     int flag=1;
     if(row!=col){
         flag=0;
