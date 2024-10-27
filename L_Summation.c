@@ -1,24 +1,18 @@
 #include<stdio.h>
-int fun(int ary[], int n){
-    if(n==-1){
-        return 0;
-    }
-    int sum;
-    if(n==sizeof(ary)-1){
-        int sum=0;
-    }
-    sum = sum + ary[n];
-    fun(ary, n-1);
-    printf("%d",sum);
-
+long long int fun(int ar[],int n ,int i){
+    if(i==n) return 0;
+    long long int ans= fun(ar,n,i+1);
+    ans = ans+ar[i];
+    return ans;
 }
 int main(){
     int n;
     scanf("%d",&n);
-    int ary[n];
+    int ar[n];
     for(int i=0; i<n; i++){
-        scanf("%d",&ary[i]);
+        scanf("%d",&ar[i]);
     }
-    fun(ary,n-1);
+    long long sum = fun(ar,n,0);
+    printf("%lld",sum);
     return 0;
 }
